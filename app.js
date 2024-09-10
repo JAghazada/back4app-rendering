@@ -10,7 +10,10 @@ app.use(express.static(path.join(__dirname, "views/public")));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(Router)
+// app.use(Router)
+app.get("/",(req,res)=>{
+    res.send("Hello my project").status(200)
+})
 
 app.listen(PORT, () => {
     console.log("Server runnning on: " + PORT);
